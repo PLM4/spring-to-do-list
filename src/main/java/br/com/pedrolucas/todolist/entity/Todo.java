@@ -5,7 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "todos")
@@ -17,11 +19,19 @@ public class Todo {
     private String title;
     @NotBlank
     private String description;
-
+    @Min(1)
     private int priority;
-    private boolean realized;
+    @NotNull
+    private boolean realized = false;
+
+    public Todo() {
+    }
 
     public Todo(String title, String description, int priority, boolean realized) {
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.realized = false;
     }
 
     public Long getId() {
