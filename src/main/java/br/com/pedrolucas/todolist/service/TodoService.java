@@ -1,7 +1,6 @@
 package br.com.pedrolucas.todolist.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -33,7 +32,7 @@ public class TodoService {
         return list();
     }
     
-    public List<Todo> deleteTodo(UUID id){
+    public List<Todo> deleteTodo(Long id){
         todoRepository.deleteById(id);
         return list();  
     }

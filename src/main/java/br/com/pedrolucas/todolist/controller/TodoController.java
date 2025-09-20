@@ -1,7 +1,6 @@
 package br.com.pedrolucas.todolist.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +40,7 @@ public class TodoController {
     }
 
     @DeleteMapping("/{id}")
-    public List<Todo> delete(@PathVariable("id") UUID id){
+    public List<Todo> delete(@PathVariable("id") Long id){
         return todoService.deleteTodo(id);
     }
 }

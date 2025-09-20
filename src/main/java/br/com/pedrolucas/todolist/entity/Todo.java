@@ -1,7 +1,5 @@
 package br.com.pedrolucas.todolist.entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,17 +11,17 @@ import jakarta.persistence.Table;
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
     private String title;
     private String description;
     private int priority;
     private boolean realized;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
